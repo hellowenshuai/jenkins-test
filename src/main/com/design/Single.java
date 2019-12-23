@@ -24,4 +24,13 @@ public class Single {
         System.out.println("instance:"+instance);
         System.out.println("instance2:"+instance2);
     }
+
+    private static class SingletonHolder {
+        private static final Single INSTANCE = new Single();
+    }
+
+    public Single getInstance2() {
+        return SingletonHolder.INSTANCE;
+    }
+
 }
