@@ -5,10 +5,15 @@ public class Single {
     private Single(){}
     //2定义一个类变量
     public  static  Single instance;
-    //3.获取一个对象
-    public static synchronized Single getInstance() {
+    //3.获取一个对象，存在效率问题，使用双重校验锁-线程安全
+    public static Single getInstance() {
         if (instance == null) {
-            instance = new Single();
+            //当对象未创建时，才进入到锁区域，避免无所谓的加锁操作
+            synchronized (Single.class) {
+                if (instance == null) {
+                    instance = new Single();
+                }
+            }
         }
         return instance;
     }
