@@ -4,7 +4,7 @@ public class Single {
     //1.私有化构造器
     private Single(){}
     //2定义一个类变量
-    public  static  Single instance;
+    public  static volatile Single instance;
     //3.获取一个对象，存在效率问题，使用双重校验锁-线程安全
     public static Single getInstance() {
         if (instance == null) {
