@@ -4,9 +4,9 @@ public class Single {
     //1.私有化构造器
     private Single(){}
     //2定义一个类变量
-    public  static  Single instance = new Single();
+    public  static  Single instance;
     //3.获取一个对象
-    public static Single getInstance() {
+    public static synchronized Single getInstance() {
         if (instance == null) {
             instance = new Single();
         }
