@@ -18,7 +18,7 @@ import java.util.Map;
  * 链接：https://leetcode-cn.com/problems/two-sum
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Test {
+public class TwoSumTest {
     /**
      * 这种方式时间复杂度是O（N*N）
      *
@@ -52,24 +52,24 @@ public class Test {
         //2.遍历数组，寻找target-nums[i] = y。
         //3.去map里面寻找是否存在这样的值。且这个值对应的索引不是i
         // 返回i和y的索引即可
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int i = 0; i <nums.length ; i++) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
             //将值存在key上，索引存在value上
             map.put(nums[i], i);
         }
-        for (int i = 0; i <nums.length ; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int value = target - nums[i];
-            if (map.containsKey(value)&&map.get(value)!=i){
-                return new int[]{i,map.get(value)};
+            if (map.containsKey(value) && map.get(value) != i) {
+                return new int[]{i, map.get(value)};
             }
         }
-     throw new IllegalAccessException("No two sum solution");
+        throw new IllegalAccessException("No two sum solution");
     }
 
     public static void main(String[] args) throws IllegalAccessException {
         int[] nums = {3, 3};
         int target = 6;
-        Test test = new Test();
+        TwoSumTest test = new TwoSumTest();
         int[] ints = test.twoSum2(nums, target);
         for (int i = 0; i < ints.length; i++) {
             System.out.println("ints:" + ints[i]);

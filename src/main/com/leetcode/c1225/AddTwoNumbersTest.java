@@ -20,7 +20,7 @@ class ListNode {
     }
 }
 
-public class Test02 {
+public class AddTwoNumbersTest {
     /**
      * （head1.val + head2.val + jinwei） % 10 就是结果中此位置的值。而新的进位为（head1.val + head2.val + jinwei） / 10 。
      * 有两个地方是主要注意的。
@@ -80,7 +80,7 @@ public class Test02 {
 
 
     public static void main(String[] args) {
-        Test02 test02 = new Test02();
+        AddTwoNumbersTest test02 = new AddTwoNumbersTest ();
         ListNode listNode = new ListNode(9);
         listNode.next = new ListNode(8);
 
